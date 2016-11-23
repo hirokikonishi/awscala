@@ -32,3 +32,11 @@ lazy val awsDynamo = (project in file("aws/dynamo")).
     scalaVersion := "2.12.0",
     libraryDependencies ++= awsDynamoDeps
   )
+
+lazy val awsIAM = (project in file("aws/iam")).
+  dependsOn(awsCore).
+  settings(
+    name := "aws-iam",
+    scalaVersion := "2.12.0",
+    libraryDependencies ++= awsIAMDeps
+  )

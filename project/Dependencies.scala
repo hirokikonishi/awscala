@@ -6,7 +6,7 @@ object Dependencies {
   val awsSdkVersion = "1.11.58"
   val awsJavaSdkS3 = "com.amazonaws" % "aws-java-sdk-s3" % awsSdkVersion
   val awsJavaSdkDynamo = "com.amazonaws" % "aws-java-sdk-dynamodb" % awsSdkVersion
-  val awsJavaSdkIam = "com.amazonaws" % "aws-java-sdk-iam" % awsSdkVersion
+  val awsJavaSdkIAM = "com.amazonaws" % "aws-java-sdk-iam" % awsSdkVersion
 
   val scalaTest = "org.scalatest" %% "scalatest" % "3.0.1"
   val scalaLogging = "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0"
@@ -19,7 +19,7 @@ object Dependencies {
   val config = "com.typesafe" % "config" % "1.3.0"
    
   lazy val rootDeps = Seq(
-    awsJavaSdkIam,
+    awsJavaSdkIAM,
     awsJavaSdkS3,
     awsJavaSdkDynamo,
     scalaLogging,
@@ -31,7 +31,7 @@ object Dependencies {
   )
   
   lazy val awsCoreDeps = Seq(
-    awsJavaSdkIam,
+    awsJavaSdkIAM,
   scalaLogging,
   jodaTime,
   joda,
@@ -43,7 +43,6 @@ object Dependencies {
     awsJavaSdkS3,
     scalaLogging,
     jodaTime,
-    logBack,
     scalaTest,
     logBack
   )
@@ -52,9 +51,16 @@ object Dependencies {
     awsJavaSdkDynamo,
     scalaLogging,
     jodaTime,
-    logBack,
     scalaTest,
     logBack
   )
 
+  lazy val awsIAMDeps = Seq(
+    awsJavaSdkIAM,
+    scalaLogging,
+    jodaTime,
+    joda,
+    logBack,
+    scalaTest
+  )
 }
