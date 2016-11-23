@@ -33,6 +33,14 @@ lazy val awsDynamo = (project in file("aws/dynamo")).
     libraryDependencies ++= awsDynamoDeps
   )
 
+lazy val awsSimpleDB = (project in file("aws/simpledb")).
+  dependsOn(awsCore).
+  settings(
+    name := "aws-simpledb",
+    scalaVersion := "2.12.0",
+    libraryDependencies ++= awsSimpleDBDeps
+  )
+
 lazy val awsIAM = (project in file("aws/iam")).
   dependsOn(awsCore).
   settings(
