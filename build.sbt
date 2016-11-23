@@ -1,7 +1,7 @@
 import Dependencies._
 
 lazy val root = (project in file(".")).
-  aggregate(awsCore,awsS3,awsDynamo).
+  aggregate(awsCore,awsS3,awsDynamo,awsSimpleDB,awsIAM,awsSqs).
   settings(
     name := "aws-scala",
     organization := "com.github.hirokikonishi",
@@ -47,4 +47,12 @@ lazy val awsIAM = (project in file("aws/iam")).
     name := "aws-iam",
     scalaVersion := "2.12.0",
     libraryDependencies ++= awsIAMDeps
+  )
+
+lazy val awsSqs = (project in file("aws/sqs")).
+  dependsOn(awsCore).
+  settings(
+    name := "aws-sqs",
+    scalaVersion := "2.12.0",
+    libraryDependencies ++= awsSqsDeps
   )
