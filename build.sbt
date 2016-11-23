@@ -56,3 +56,11 @@ lazy val awsSqs = (project in file("aws/sqs")).
     scalaVersion := "2.12.0",
     libraryDependencies ++= awsSqsDeps
   )
+
+lazy val awsEmr = (project in file("aws/emr")).
+  dependsOn(awsCore).
+  settings(
+    name := "aws-emr",
+    scalaVersion := "2.12.0",
+    libraryDependencies ++= awsEmrDeps
+  )
